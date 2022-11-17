@@ -1,5 +1,5 @@
 import type { WatchOptions } from 'chokidar';
-import { VimixConfig, resolveConfig } from '../core';
+import { resolveConfig, VimixConfig } from '../core';
 
 export async function createDevServer(config: VimixConfig) {
   // logger.debug('vimix createDevServer', { config: JSON.stringify(config) });

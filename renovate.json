@@ -5,11 +5,7 @@
   "commitMessageExtra": "to {{newValue}}",
   "commitMessageTopic": "{{depName}}",
   "extends": ["config:base", ":preserveSemverRanges"],
-  "ignoreDeps": [
-    "zx",
-    "pnpm",
-    "node"
-  ],
+  "ignoreDeps": ["zx", "pnpm", "node"],
   "ignorePaths": ["fixtures", "test/"],
   "postUpdateOptions": ["yarnDedupeHighest"],
   "packageRules": [

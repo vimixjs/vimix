@@ -20,14 +20,14 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "cda": "bin/create-vimix.js",
-    "create-vimix": "bin/create-vimix.js"
+    "cda": "index.js",
+    "create-vimix": "index.js"
   },
   "files": [
     "dist",
     "template-*",
     "templates",
-    "bin"
+    "index.js"
   ],
   "scripts": {
     "build": "tsup",

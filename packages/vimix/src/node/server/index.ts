@@ -2,7 +2,7 @@ import spawn from 'cross-spawn';
 import { isObject } from 'lodash-es';
 import type { ChildProcess, Serializable } from 'node:child_process';
 import { treeKillSync as killProcessSync } from '../../shared/lib/tree-kill';
-import { VimixConfig, logger } from '../core';
+import { logger, VimixConfig } from '../core';
 
 export interface VimixServer {
   config: VimixConfig;

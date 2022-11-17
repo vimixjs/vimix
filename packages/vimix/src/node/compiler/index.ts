@@ -5,7 +5,7 @@ import { debounce } from 'lodash-es';
 import { createRequire } from 'module';
 import path from 'path';
 import { templateDir } from '../constants';
-import { VimixConfig, logger, Mustache, ServerMode } from '../core';
+import { logger, Mustache, ServerMode, VimixConfig } from '../core';
 
 const require = createRequire(import.meta.url);
 function defaultWarningHandler(message: string, key: string) {

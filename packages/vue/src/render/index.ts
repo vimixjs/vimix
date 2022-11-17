@@ -1,11 +1,11 @@
-import { createServer as createViteServer } from 'vite';
-
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import fs from 'fs';
 import path from 'path';
+import { createServer as createViteServer } from 'vite';
 
 export async function render(ctx: any, opts: { csr?: boolean } = {}) {
+  const { csr = false } = opts;
   const vite = await createViteServer({
     appType: 'custom',
     publicDir: path.resolve(process.cwd(), 'app', 'public'),
@@ -23,6 +23,8 @@ export async function render(ctx: any, opts: { csr?: boolean } = {}) {
       external: ['reflect-metadata'],
     },
   });
+
+  console.log(csr);
 
   const { req } = ctx;
 

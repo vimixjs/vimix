@@ -46,12 +46,12 @@
     "picocolors": "^1.0.0"
   },
   "devDependencies": {
-    "@vimix/node": "workspace:*",
     "@types/cross-spawn": "^6.0.2",
     "@types/debug": "^4.1.7",
     "@types/lodash-es": "^4.17.6",
     "@types/minimatch": "^5.1.2",
     "@types/mustache": "^4.2.1",
+    "@vimix/node": "workspace:*",
     "vite": "^3.2.3"
   },
   "peerDependencies": {
