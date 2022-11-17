@@ -1,0 +1,26 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "inputs": ["tsup.config.ts", "src/**/*.ts", "src/**/*.tsx"]
+    },
+    "build:dev": {
+      "dependsOn": ["^build:dev"],
+      "outputs": ["dist/**"],
+      "inputs": ["tsup.config.ts", "src/**/*.ts", "src/**/*.tsx"]
+    },
+    "dev": {
+      "cache": false,
+      "dependsOn": ["^build:dev"],
+      "outputs": ["dist/**"],
+      "inputs": ["tsup.config.ts", "src/**/*.ts", "src/**/*.tsx"]
+    },
+    "prebundle": {
+      "cache": false,
+      "dependsOn": ["^prebundle"]
+    }
+  },
+  "globalDependencies": ["tsconfig.base.json", "tsconfig.json"]
+}

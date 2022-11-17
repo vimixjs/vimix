@@ -1,0 +1,29 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "automerge": false,
+  "commitMessageAction": "Bump",
+  "commitMessageExtra": "to {{newValue}}",
+  "commitMessageTopic": "{{depName}}",
+  "extends": ["config:base", ":preserveSemverRanges"],
+  "ignoreDeps": [
+    "zx",
+    "pnpm",
+    "node"
+  ],
+  "ignorePaths": ["fixtures", "test/"],
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "packageRules": [
+    {
+      "updateTypes": ["major"],
+      "labels": ["UPDATE-MAJOR"]
+    },
+    {
+      "updateTypes": ["rollback"],
+      "labels": ["UPDATE-MAJOR"]
+    },
+    {
+      "matchDepTypes": ["engines", "@types/node"],
+      "enabled": false
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "create-vimix",
+  "version": "0.0.1",
+  "description": "create-vimix",
+  "keywords": [
+    "vimix"
+  ],
+  "homepage": "https://vimixjs.com",
+  "bugs": {
+    "url": "https://github.com/vimixjs/vimix/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vimixjs/vimix",
+    "directory": "packages/create-vimix"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "cda": "bin/create-vimix.js",
+    "create-vimix": "bin/create-vimix.js"
+  },
+  "files": [
+    "dist",
+    "template-*",
+    "templates",
+    "bin"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "pnpm build --watch"
+  },
+  "dependencies": {
+    "execa": "^6.1.0",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^10.1.0",
+    "mustache": "^4.2.0",
+    "picocolors": "^1.0.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/mustache": "^4.2.1",
+    "@types/prompts": "^2.4.1"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "authors": [
+    "Zack <lorenx@163.com> (https://github.com/loyep)"
+  ]
+}

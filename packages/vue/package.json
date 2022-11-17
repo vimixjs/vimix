@@ -1,0 +1,64 @@
+{
+  "name": "@vimix/vue",
+  "version": "0.0.1",
+  "description": "@vimix/vue",
+  "keywords": [
+    "vimix"
+  ],
+  "homepage": "https://vimixjs.com",
+  "bugs": {
+    "url": "https://github.com/vimixjs/vimix/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vimixjs/vimix",
+    "directory": "packages/vue"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "browser": "./dist/index.mjs",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "cjs",
+    "esm"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "pnpm build --watch"
+  },
+  "dependencies": {
+    "@babel/core": "^7.20.2",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vitejs/plugin-vue-jsx": "^2.1.1",
+    "@vue/babel-plugin-jsx": "^1.1.1",
+    "@vue/compiler-sfc": "^3.2.45"
+  },
+  "devDependencies": {
+    "vimix": "workspace:*",
+    "vite": "^3.2.3",
+    "vue": "^3.2.45"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "authors": [
+    "Zack <lorenx@163.com> (https://github.com/loyep)"
+  ]
+}

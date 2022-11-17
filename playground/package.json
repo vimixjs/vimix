@@ -1,0 +1,14 @@
+{
+  "name": "@vimix/playground",
+  "private": true,
+  "scripts": {
+    "build": "vimix build",
+    "dev": "vimix dev",
+    "start": "vimix start"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.25",
+    "vimix": "workspace:*",
+    "react": "^18.2.0"
+  }
+}

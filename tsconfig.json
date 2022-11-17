@@ -1,0 +1,12 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/create-vimix" },
+    { "path": "packages/vimix" },
+    { "path": "packages/cli" },
+    { "path": "packages/react" },
+    { "path": "packages/vue" },
+    { "path": "packages/vite" },
+    { "path": "packages/node" }
+  ]
+}

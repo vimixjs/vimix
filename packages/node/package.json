@@ -1,0 +1,46 @@
+{
+  "name": "@vimix/node",
+  "version": "0.0.1",
+  "description": "@vimix/node",
+  "keywords": [
+    "vimix"
+  ],
+  "homepage": "https://vimixjs.com",
+  "bugs": {
+    "url": "https://github.com/vimixjs/vimix/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vimixjs/vimix",
+    "directory": "packages/node"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "cjs",
+    "esm"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "pnpm build --watch"
+  },
+  "dependencies": {
+    "connect": "^3.7.0"
+  },
+  "devDependencies": {
+    "@types/connect": "^3.4.35"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "authors": [
+    "Zack <lorenx@163.com> (https://github.com/loyep)"
+  ]
+}
