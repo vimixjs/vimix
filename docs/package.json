@@ -2,10 +2,6 @@
   "name": "@vimix/docs",
   "private": true,
   "description": "Docs for Vimix",
-  "scripts": {
-    "build": "vimix build",
-    "dev": "vimix dev"
-  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

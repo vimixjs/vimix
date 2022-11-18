@@ -9,8 +9,8 @@
     "cov": "vitest run --coverage",
     "dep:update": "pnpm up --interactive --latest --recursive",
     "dev": "vimix-scripts turbo dev",
-    "docs:build": "vimix build docs",
-    "docs:dev": "vimix dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:dev": "vitepress dev docs",
     "format": "prettier --cache --write .",
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint --cache --ext js,jsx,ts,tsx .",
@@ -58,6 +58,7 @@
     "vimix": "workspace:*",
     "vimix-scripts": "workspace:*",
     "vite": "^3.2.4",
+    "vitepress": "1.0.0-alpha.29",
     "vitest": "^0.25.2"
   },
   "packageManager": "pnpm@7.15.0",
