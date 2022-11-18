@@ -106,7 +106,6 @@ import { logger } from '../utils/logger';
       pkg,
       version,
       deps: [
-        '@vimix/nest',
         '@vimix/node',
         '@vimix/react',
         '@vimix/vue',

@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2020: true,
+    ES2020: true,
   },
   extends: [
     'eslint:recommended',
@@ -26,8 +26,8 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    'arrow-body-style': 'off', // 关闭规则
-    'prefer-arrow-callback': 'off', // 关闭规则
+    'arrow-body-style': 0,
+    'prefer-arrow-callback': 0,
   },
   settings: {
     react: {

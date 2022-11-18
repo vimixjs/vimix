@@ -17,12 +17,10 @@ export default defineConfig([
     format: ['cjs', 'esm'],
     external: [
       'esbuild',
-      'typescript',
       'vite',
       'tsup',
       'es-module-lexer',
       '@vimix/node',
-      /compiled/,
       'mustache',
       /vimix\/package.json/,
     ],

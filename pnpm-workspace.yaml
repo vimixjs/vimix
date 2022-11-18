@@ -1,7 +1,7 @@
+prefer-workspace-packages: true
 packages:
   - 'docs'
   - 'packages/*'
   - 'examples/*'
   - 'playground'
   - 'scripts'
-
