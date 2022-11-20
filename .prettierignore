@@ -7,7 +7,6 @@ fixtures
 *.yaml
 *.less
 .turbo
-lerna.json
 **/__temp__/**
 tests/**/out/**
 pnpm-lock.yaml
