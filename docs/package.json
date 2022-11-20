@@ -2,6 +2,10 @@
   "name": "@vimix/docs",
   "private": true,
   "description": "Docs for Vimix",
+  "scripts": {
+    "build": "vitepress build",
+    "dev": "vitepress dev"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
