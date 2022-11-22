@@ -56,10 +56,7 @@ export interface LoggerOptions {
   customLogger?: Logger;
 }
 
-export function createLogger(
-  level: LogLevel = 'info',
-  options: LoggerOptions = {},
-): Logger {
+export function createLogger(level: LogLevel = 'info', options: LoggerOptions = {}): Logger {
   if (options.customLogger) {
     return options.customLogger;
   }
@@ -67,8 +64,7 @@ export function createLogger(
   const loggedErrors = new WeakSet<Error>();
   const { prefix = '[vite]', allowClearScreen = true } = options;
   const thresh = LogLevels[level];
-  const canClearScreen =
-    allowClearScreen && process.stdout.isTTY && !process.env.CI;
+  const canClearScreen = allowClearScreen && process.stdout.isTTY && !process.env.CI;
   const clear = canClearScreen ? clearScreen : () => {};
 
   function output(type: LogType, msg: string, options: LogErrorOptions = {}) {
@@ -163,9 +159,7 @@ export function printServerUrls(
   }
   if (urls.network.length === 0 && optionsHost === undefined) {
     const note = `use ${colors.reset(colors.bold('--host'))} to expose`;
-    info(
-      colors.dim(`  ${colors.green('➜')}  ${colors.bold('Network')}: ${note}`),
-    );
+    info(colors.dim(`  ${colors.green('➜')}  ${colors.bold('Network')}: ${note}`));
   }
 }
 

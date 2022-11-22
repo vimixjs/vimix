@@ -29,10 +29,7 @@ export interface VimixServer {
 function isReadyPayload(
   payload: unknown,
 ): payload is { type: 'vimix:ready'; finishTime: number; memoryUsage: string } {
-  return (
-    isObject(payload) &&
-    (payload as Record<string, unknown>).type === 'vimix:ready'
-  );
+  return isObject(payload) && (payload as Record<string, unknown>).type === 'vimix:ready';
 }
 
 function getMemoryUsage() {
@@ -47,10 +44,7 @@ function getMemoryUsage() {
 /**
  * Create a new Vimix server.
  */
-export async function createServer(
-  opt: VimixConfig,
-  cb?: (server: VimixServer) => void,
-) {
+export async function createServer(opt: VimixConfig, cb?: (server: VimixServer) => void) {
   const config = opt;
 
   let childRef: ChildProcess | undefined;

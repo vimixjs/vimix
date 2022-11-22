@@ -18,12 +18,5 @@
     "outDir": "./dist",
     "rootDir": "."
   },
-  "exclude": [
-    "dist",
-    "esm",
-    "cjs",
-    "__tests__",
-    "node_modules",
-    "tsup.config.ts"
-  ]
+  "exclude": ["dist", "esm", "cjs", "__tests__", "node_modules", "tsup.config.ts"]
 }

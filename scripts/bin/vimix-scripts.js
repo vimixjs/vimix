@@ -10,10 +10,7 @@ import { fileURLToPath } from 'url';
 const argv = process.argv.slice(2);
 const name = argv[0];
 
-const scriptsPath = path.join(
-  fileURLToPath(import.meta.url),
-  `../../cmd/${name}.ts`,
-);
+const scriptsPath = path.join(fileURLToPath(import.meta.url), `../../cmd/${name}.ts`);
 
 assert(
   fs.existsSync(scriptsPath) && !name.startsWith('.'),

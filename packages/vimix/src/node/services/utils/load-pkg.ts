@@ -8,9 +8,7 @@ export default (rootDir: string): Record<string, any> => {
     try {
       config = JSON.parse(fs.readFileSync(resolvedPath, 'utf-8'));
     } catch (err) {
-      console.info(
-        `Fail to load config file ${resolvedPath}, use empty object`,
-      );
+      console.info(`Fail to load config file ${resolvedPath}, use empty object`);
     }
   }
 

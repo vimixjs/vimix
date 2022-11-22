@@ -30,14 +30,9 @@ export async function render(ctx: any, opts: { csr?: boolean } = {}) {
 
   const { url } = req;
 
-  const template = fs.readFileSync(
-    path.resolve(process.cwd(), 'app/index.html'),
-    'utf-8',
-  );
+  const template = fs.readFileSync(path.resolve(process.cwd(), 'app/index.html'), 'utf-8');
   const renderHtml = await vite.transformIndexHtml(url, template);
-  const { render: viteRender } = await vite.ssrLoadModule(
-    '/app/entry-server.ts',
-  );
+  const { render: viteRender } = await vite.ssrLoadModule('/app/entry-server.ts');
   const appHtml = await viteRender(url);
   const html = renderHtml.replace('<!--ssr-outlet-->', appHtml);
   return html;

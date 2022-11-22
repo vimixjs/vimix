@@ -17,9 +17,16 @@
       "outputs": ["dist/**"],
       "inputs": ["tsup.config.ts", "src/**/*.ts", "src/**/*.tsx"]
     },
+    "test": {
+      "outputs": [],
+      "dependsOn": ["$RUNNER_OS", "$NODE_VERSION"]
+    },
     "prebundle": {
       "cache": false,
       "dependsOn": ["^prebundle"]
+    },
+    "lint": {
+      "outputs": []
     }
   },
   "globalDependencies": ["tsconfig.base.json", "tsconfig.json"]

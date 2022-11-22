@@ -120,19 +120,12 @@ export interface RouteManifest {
  * A function for defining routes programmatically, instead of using the
  * filesystem convention.
  */
-export function defineRoutes(
-  callback: (defineRoute: DefineRouteFunction) => void,
-): RouteManifest {
+export function defineRoutes(callback: (defineRoute: DefineRouteFunction) => void): RouteManifest {
   const routes: RouteManifest = {};
   const parentRoutes: ConfigRoute[] = [];
   let alreadyReturned = false;
 
-  const defineRoute: DefineRouteFunction = (
-    path,
-    file,
-    optionsOrChildren,
-    children,
-  ) => {
+  const defineRoute: DefineRouteFunction = (path, file, optionsOrChildren, children) => {
     if (alreadyReturned) {
       throw new Error(
         'You tried to define routes asynchronously but started defining ' +
@@ -153,10 +146,7 @@ export function defineRoutes(
       index: options.index ? true : undefined,
       caseSensitive: options.caseSensitive ? true : undefined,
       id: createRouteId(file),
-      parentId:
-        parentRoutes.length > 0
-          ? parentRoutes[parentRoutes.length - 1].id
-          : undefined,
+      parentId: parentRoutes.length > 0 ? parentRoutes[parentRoutes.length - 1].id : undefined,
       file,
     };
 
@@ -211,10 +201,7 @@ export function defineConventionalRoutes(
 
   // First, find all route modules in app/routes
   visitFiles(path.join(appDir, 'pages'), (file) => {
-    if (
-      ignoredFilePatterns &&
-      ignoredFilePatterns.some((pattern) => minimatch(file, pattern))
-    ) {
+    if (ignoredFilePatterns && ignoredFilePatterns.some((pattern) => minimatch(file, pattern))) {
       return;
     }
 
@@ -224,9 +211,7 @@ export function defineConventionalRoutes(
       return;
     }
 
-    throw new Error(
-      `Invalid route module file: ${path.join(appDir, 'pages', file)}`,
-    );
+    throw new Error(`Invalid route module file: ${path.join(appDir, 'pages', file)}`);
   });
 
   const routeIds = Object.keys(files).sort(byLongestFirst);
@@ -234,13 +219,8 @@ export function defineConventionalRoutes(
   const uniqueRoutes = new Map<string, string>();
 
   // Then, recurse through all routes using the public defineRoutes() API
-  function defineNestedRoutes(
-    defineRoute: DefineRouteFunction,
-    parentId?: string,
-  ): void {
-    const childRouteIds = routeIds.filter(
-      (id) => findParentRouteId(routeIds, id) === parentId,
-    );
+  function defineNestedRoutes(defineRoute: DefineRouteFunction, parentId?: string): void {
+    const childRouteIds = routeIds.filter((id) => findParentRouteId(routeIds, id) === parentId);
 
     for (const routeId of childRouteIds) {
       const routePath: string | undefined = createRoutePath(
@@ -256,9 +236,7 @@ export function defineConventionalRoutes(
           throw new Error(
             `Path ${JSON.stringify(fullPath)} defined by route ${JSON.stringify(
               routeId,
-            )} conflicts with route ${JSON.stringify(
-              uniqueRoutes.get(uniqueRouteId),
-            )}`,
+            )} conflicts with route ${JSON.stringify(uniqueRoutes.get(uniqueRouteId))}`,
           );
         } else {
           uniqueRoutes.set(uniqueRouteId, routeId);
@@ -303,13 +281,10 @@ export function createRoutePath(partialRouteId: string): string | undefined {
   for (let i = 0; i < partialRouteId.length; i++) {
     const char = partialRouteId.charAt(i);
     const lastChar = i > 0 ? partialRouteId.charAt(i - 1) : undefined;
-    const nextChar =
-      i < partialRouteId.length - 1 ? partialRouteId.charAt(i + 1) : undefined;
+    const nextChar = i < partialRouteId.length - 1 ? partialRouteId.charAt(i + 1) : undefined;
 
     const isNewEscapeSequence = () => {
-      return (
-        !inEscapeSequence && char === escapeStart && lastChar !== escapeStart
-      );
+      return !inEscapeSequence && char === escapeStart && lastChar !== escapeStart;
     };
 
     const isCloseEscapeSequence = () => {
@@ -374,10 +349,7 @@ export function createRoutePath(partialRouteId: string): string | undefined {
   return result || undefined;
 }
 
-function findParentRouteId(
-  routeIds: string[],
-  childRouteId: string,
-): string | undefined {
+function findParentRouteId(routeIds: string[], childRouteId: string): string | undefined {
   return routeIds.find((id) => childRouteId.startsWith(`${id}/`));
 }
 
@@ -385,11 +357,7 @@ function byLongestFirst(a: string, b: string): number {
   return b.length - a.length;
 }
 
-function visitFiles(
-  dir: string,
-  visitor: (file: string) => void,
-  baseDir = dir,
-): void {
+function visitFiles(dir: string, visitor: (file: string) => void, baseDir = dir): void {
   for (const filename of fs.readdirSync(dir)) {
     const file = path.resolve(dir, filename);
     const stat = fs.lstatSync(file);

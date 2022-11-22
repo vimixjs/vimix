@@ -2,10 +2,7 @@ import { createRequire } from 'node:module';
 import { dirname, join } from 'node:path';
 
 const getRoot = () => {
-  if (
-    typeof require !== 'undefined' &&
-    typeof require.resolve !== 'undefined'
-  ) {
+  if (typeof require !== 'undefined' && typeof require.resolve !== 'undefined') {
     return dirname(require.resolve('vimix/package.json'));
   }
   return dirname(createRequire(import.meta.url).resolve('vimix/package.json'));

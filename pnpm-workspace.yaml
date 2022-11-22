@@ -1,7 +1,11 @@
-prefer-workspace-packages: true
 packages:
-  - 'docs'
-  - 'packages/*'
-  - 'examples/*'
+  - 'docs/**'
+  - 'packages/**'
+  - 'examples/**'
   - 'playground'
   - 'scripts'
+  - 'test/**'
+  - '!**/.tmp/**'
+options:
+  prefer-workspace-packages: true
+  strict-peer-dependencies: false

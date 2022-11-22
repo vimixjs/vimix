@@ -13,10 +13,7 @@ export type VimixConfig = {
 
 export type VimixUserConfig = Partial<VimixConfig>;
 
-type Json = Record<
-  string,
-  string | number | boolean | Date | Record<string, any>
->;
+type Json = Record<string, string | number | boolean | Date | Record<string, any>>;
 
 export class CoreService {
   public command: CommandName;

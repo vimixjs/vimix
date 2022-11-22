@@ -11,9 +11,7 @@ export function getPkgs(opts?: { base?: string }): string[] {
 
   return glob
     .sync('**/package.json', {
-      ignore: [
-        '**/{node_modules,src,dist,compiled,templates,.turbo,test,cjs,esm}/**',
-      ],
+      ignore: ['**/{node_modules,src,dist,compiled,templates,.turbo,test,cjs,esm}/**'],
       cwd,
     })
     .map(dirname);
@@ -21,12 +19,7 @@ export function getPkgs(opts?: { base?: string }): string[] {
 
 export function eachPkg(
   pkgs: string[],
-  fn: (opts: {
-    name: string;
-    dir: string;
-    pkgPath: string;
-    pkgJson: Record<string, any>;
-  }) => void,
+  fn: (opts: { name: string; dir: string; pkgPath: string; pkgJson: Record<string, any> }) => void,
   opts?: { base?: string },
 ) {
   const base = opts?.base || PATHS.PACKAGES;

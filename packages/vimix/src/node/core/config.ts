@@ -17,9 +17,7 @@ export function defineConfig(config: VimixUserConfig): VimixUserConfig {
 
 export async function resolveUserConfig(opts: ResolveConfigOptions) {
   const { root } = opts;
-  const configPaths = configFiles
-    .map((p) => path.join(root, p))
-    .filter((p) => fs.existsSync(p));
+  const configPaths = configFiles.map((p) => path.join(root, p)).filter((p) => fs.existsSync(p));
   if (!configPaths.length) return null;
   if (configPaths.length > 1) {
     console.log(`Exist multiple config files. Now use ${configPaths[0]}`);
@@ -66,10 +64,7 @@ export function generateConfig(
   } as any;
   config.serverBuildPath = isAbsolute(config.serverBuildPath)
     ? config.serverBuildPath
-    : join(
-        opts.root,
-        config.serverBuildPath || join(config.buildPath, 'server/index.js'),
-      );
+    : join(opts.root, config.serverBuildPath || join(config.buildPath, 'server/index.js'));
   config.root = opts.root;
   return config as VimixConfig;
 }

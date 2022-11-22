@@ -79,11 +79,7 @@ import { logger } from '../utils/logger';
   await $`lerna version --exact --no-commit-hooks --no-git-tag-version --no-push --loglevel error`;
   const { version } = await import(PATHS.LERNA_CONFIG);
   let tag = 'latest';
-  if (
-    version.includes('-alpha.') ||
-    version.includes('-beta.') ||
-    version.includes('-rc.')
-  ) {
+  if (version.includes('-alpha.') || version.includes('-beta.') || version.includes('-rc.')) {
     tag = 'next';
   } else if (version.includes('-canary.')) {
     tag = 'canary';
@@ -95,9 +91,7 @@ import { logger } from '../utils/logger';
   logger.event('update example versions');
   const examplesDir = PATHS.EXAMPLES;
   const examples = fs.readdirSync(examplesDir).filter((dir) => {
-    return (
-      !dir.startsWith('.') && existsSync(join(examplesDir, dir, 'package.json'))
-    );
+    return !dir.startsWith('.') && existsSync(join(examplesDir, dir, 'package.json'));
   });
   examples.forEach((example) => {
     const pkg = fse.readJSONSync(join(examplesDir, example, 'package.json'));
@@ -105,13 +99,7 @@ import { logger } from '../utils/logger';
     setDepsVersion({
       pkg,
       version,
-      deps: [
-        '@vimix/node',
-        '@vimix/react',
-        '@vimix/vue',
-        'create-vimix',
-        'vimix',
-      ],
+      deps: ['@vimix/node', '@vimix/react', '@vimix/vue', 'create-vimix', 'vimix'],
     });
     delete pkg.version;
     fs.writeFileSync(
@@ -144,9 +132,7 @@ import { logger } from '../utils/logger';
 
   // check 2fa config
   let otpArg: string[] = [];
-  if (
-    (await $`npm profile get "two-factor auth"`).toString().includes('writes')
-  ) {
+  if ((await $`npm profile get "two-factor auth"`).toString().includes('writes')) {
     let code = '';
     do {
       // get otp from user
@@ -170,11 +156,7 @@ import { logger } from '../utils/logger';
   $.verbose = true;
 })();
 
-function setDepsVersion(opts: {
-  deps: string[];
-  pkg: Record<string, any>;
-  version: string;
-}) {
+function setDepsVersion(opts: { deps: string[]; pkg: Record<string, any>; version: string }) {
   const { deps, pkg, version } = opts;
   pkg.dependencies ||= {};
   deps.forEach((dep) => {

@@ -12,8 +12,7 @@ export async function run(argv: string[]) {
   const argTargetDir = argv[0];
   let targetDir = argTargetDir || defaultTargetDir;
 
-  const getProjectName = () =>
-    targetDir === '.' ? path.basename(path.resolve()) : targetDir;
+  const getProjectName = () => (targetDir === '.' ? path.basename(path.resolve()) : targetDir);
 
   let result: any;
 
@@ -30,13 +29,10 @@ export async function run(argv: string[]) {
           },
         },
         {
-          type: () =>
-            !fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'confirm',
+          type: () => (!fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'confirm'),
           name: 'overwrite',
           message: () =>
-            (targetDir === '.'
-              ? 'Current directory'
-              : `Target directory "${targetDir}"`) +
+            (targetDir === '.' ? 'Current directory' : `Target directory "${targetDir}"`) +
             ' is not empty. Remove existing files and continue?',
         },
         {
@@ -53,8 +49,7 @@ export async function run(argv: string[]) {
           name: 'packageName',
           message: colors.reset('Package name:'),
           initial: () => toValidPackageName(getProjectName()),
-          validate: (dir) =>
-            isValidPackageName(dir) || 'Invalid package.json name',
+          validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name',
         },
       ],
       {
@@ -104,13 +99,10 @@ export async function run(argv: string[]) {
 
   write(
     'package.json',
-    Mustache.render(
-      fs.readFileSync(path.join(templateDir, 'package.json.mustache'), 'utf-8'),
-      {
-        version,
-        projectName: packageName || getProjectName(),
-      },
-    ),
+    Mustache.render(fs.readFileSync(path.join(templateDir, 'package.json.mustache'), 'utf-8'), {
+      version,
+      projectName: packageName || getProjectName(),
+    }),
   );
 
   console.log('\nDone. Now run:\n');
@@ -136,9 +128,7 @@ function isEmpty(path: string) {
 }
 
 function isValidPackageName(projectName: string) {
-  return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(
-    projectName,
-  );
+  return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(projectName);
 }
 
 function toValidPackageName(projectName: string) {
