@@ -3,9 +3,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { resolveConfig } from '../config';
 
-export async function routes(vimixRoot: string) {
+export async function routes(base: string) {
   const config = await resolveConfig({
-    root: vimixRoot,
+    root: base,
     mode: 'production',
   });
   console.log('config', config);

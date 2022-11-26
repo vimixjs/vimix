@@ -1,6 +1,6 @@
 import { cac } from 'cac';
+import makeDebug from 'debug';
 import path from 'node:path';
-// @ts-expect-error
 import { version } from '../../package.json';
 import { build } from './cli/build';
 import { dev } from './cli/dev';
@@ -8,16 +8,23 @@ import { routes } from './cli/routes';
 import { start } from './cli/start';
 import { DEFAULT_PORT } from './constants';
 
+const DEBUG = makeDebug('vimix');
+
 const cli = cac('vimix').version(version).help();
 
 export async function run() {
-  // logger.debug('vimix Service');
   cli
-    .command('dev [root]', 'start dev server')
+    .command('dev [root]', 'Start a development server')
     .allowUnknownOptions()
     .option('--config <path>', 'Use a custom config file')
-    .option('-p, --port <port>', 'dev server port', { default: DEFAULT_PORT })
-    .action((root: string, devOptions: any) => dev(path.resolve(root), devOptions));
+    .option('-i, --inspect', 'Node inspector', { default: false })
+    .option('-p, --port <port>', 'Port to start server on', { default: DEFAULT_PORT })
+    .option('-o, --open', 'Open a browser tab', { default: false })
+    .action(async (_root: string, devOptions: any) => {
+      console.log(devOptions);
+      const root = path.resolve(_root || '.');
+      await dev(root, devOptions);
+    });
 
   cli
     .command('build [root]', 'build for production')

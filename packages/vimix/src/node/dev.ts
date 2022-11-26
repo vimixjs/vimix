@@ -3,6 +3,8 @@ import { createServer as createViteDevServer } from 'vite';
 import { resolveConfig } from './core/config';
 import { pluginServerReload } from './plugins/plugin-server-reload';
 // import { createVitePlugins } from './vitePlugin';
+import path from 'path';
+import inspect from 'vite-plugin-inspect';
 
 function cleanOptions(options: any) {
   const option = { ...options };
@@ -29,6 +31,7 @@ export async function createDevServer(
     react({
       include: [/\.tsx?$/, /\.jsx?$/],
     }),
+    cliOptions.inspect ? inspect({ outputDir: path.join('.vimix', 'inspect') }) : undefined,
     pluginServerReload(config, restartServer),
   ];
   return createViteDevServer({
@@ -39,8 +42,9 @@ export async function createDevServer(
     logLevel: cliOptions.logLevel,
     clearScreen: cliOptions.clearScreen,
     server: {
+      open: cliOptions.open,
       ...cleanOptions(cliOptions),
-      port: config.port ?? 3000,
+      port: config.port ?? cliOptions.port ?? 3000,
     },
     plugins,
   });

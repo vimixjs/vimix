@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "build": "vimix build",
-    "dev": "vimix dev",
+    "dev": "vimix dev -i",
     "start": "vimix start"
   },
   "dependencies": {

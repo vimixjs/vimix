@@ -43,7 +43,8 @@
     "minimatch": "^5.1.0",
     "mustache": "^4.2.0",
     "ora": "^6.1.2",
-    "picocolors": "^1.0.0"
+    "picocolors": "^1.0.0",
+    "vite-plugin-inspect": "^0.7.9"
   },
   "devDependencies": {
     "@types/cross-spawn": "^6.0.2",

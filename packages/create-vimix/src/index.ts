@@ -1,7 +1,7 @@
 import Mustache from 'mustache';
 import fs from 'node:fs';
 import path from 'node:path';
-import colors from 'picocolors';
+import c from 'picocolors';
 import prompts from 'prompts';
 import { version } from '../package.json';
 
@@ -22,7 +22,7 @@ export async function run(argv: string[]) {
         {
           type: argTargetDir ? null : 'text',
           name: 'projectName',
-          message: colors.reset('Project name:'),
+          message: c.reset('Project name:'),
           initial: defaultTargetDir,
           onState: (state) => {
             targetDir = formatTargetDir(state.value) || defaultTargetDir;
@@ -38,7 +38,7 @@ export async function run(argv: string[]) {
         {
           type: (_, { overwrite }: { overwrite?: boolean }) => {
             if (overwrite === false) {
-              throw new Error(colors.red('✖') + ' Operation cancelled');
+              throw new Error(c.red('✖') + ' Operation cancelled');
             }
             return null;
           },
@@ -47,14 +47,14 @@ export async function run(argv: string[]) {
         {
           type: () => (isValidPackageName(getProjectName()) ? null : 'text'),
           name: 'packageName',
-          message: colors.reset('Package name:'),
+          message: c.reset('Package name:'),
           initial: () => toValidPackageName(getProjectName()),
           validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name',
         },
       ],
       {
         onCancel: () => {
-          throw new Error(colors.red('✖') + ' Operation cancelled');
+          throw new Error(c.red('✖') + ' Operation cancelled');
         },
       },
     );
@@ -79,7 +79,7 @@ export async function run(argv: string[]) {
   const pkgManager = pkgInfo ? pkgInfo.name : 'npm';
   // const isYarn1 = pkgManager === 'yarn' && pkgInfo?.version.startsWith('1.');
 
-  console.log(`\nScaffolding project in ${colors.green(root)}`);
+  console.log(`\nScaffolding project in ${c.green(root)}`);
 
   const templateDir = path.resolve(__dirname, '../../templates', template);
 
