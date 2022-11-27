@@ -3,6 +3,28 @@ import { defineConfig } from 'tsup';
 export default defineConfig([
   {
     entry: {
+      config: 'src/node/config.ts',
+    },
+    bundle: true,
+    platform: 'node',
+    splitting: false,
+    treeshake: true,
+    keepNames: true,
+    outDir: 'config',
+    dts: true,
+    format: ['cjs', 'esm'],
+    external: [
+      'esbuild',
+      'vite',
+      'tsup',
+      'es-module-lexer',
+      '@vimix/node',
+      'mustache',
+      /vimix\/package.json/,
+    ],
+  },
+  {
+    entry: {
       index: 'src/node/index.ts',
       cli: 'src/node/cli.ts',
       dev: 'src/node/dev.ts',
