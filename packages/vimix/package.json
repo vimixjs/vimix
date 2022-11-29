@@ -22,14 +22,13 @@
       "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     },
-    "./package.json": "./package.json",
     "./config": {
-      "import": "./config/config.js",
-      "types": "./config/config.d.ts"
-    }
+      "types": "./config/index.d.ts",
+      "import": "./config/index.js"
+    },
+    "./package.json": "./package.json"
   },
   "main": "dist/index.cjs",
-  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
     "vimix": "./bin/vimix.js"

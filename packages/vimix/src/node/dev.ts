@@ -5,6 +5,7 @@ import { pluginServerReload } from './plugins/plugin-server-reload';
 // import { createVitePlugins } from './vitePlugin';
 import path from 'path';
 import inspect from 'vite-plugin-inspect';
+import pluginVimix from './plugins/vimix';
 
 function cleanOptions(options: any) {
   const option = { ...options };
@@ -28,6 +29,7 @@ export async function createDevServer(
   });
   console.log('config', config);
   const plugins = [
+    pluginVimix(),
     react({
       include: [/\.tsx?$/, /\.jsx?$/],
     }),
@@ -41,6 +43,7 @@ export async function createDevServer(
     cacheDir: cliOptions.cacheDir,
     logLevel: cliOptions.logLevel,
     clearScreen: cliOptions.clearScreen,
+    configFile: false,
     server: {
       open: cliOptions.open,
       ...cleanOptions(cliOptions),

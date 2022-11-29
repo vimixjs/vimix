@@ -3,11 +3,12 @@ import { defineConfig } from 'tsup';
 export default defineConfig([
   {
     entry: {
-      config: 'src/node/config.ts',
+      index: 'src/node/config.ts',
     },
     bundle: true,
     platform: 'node',
     splitting: false,
+    clean: true,
     treeshake: true,
     keepNames: true,
     outDir: 'config',
