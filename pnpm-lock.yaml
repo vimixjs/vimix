@@ -188,7 +188,7 @@ importers:
   packages/vue:
     specifiers:
       '@babel/core': ^7.20.2
-      '@vitejs/plugin-vue': ^3.2.0
+      '@vitejs/plugin-vue': ^4.0.0
       '@vitejs/plugin-vue-jsx': ^2.1.1
       '@vue/babel-plugin-jsx': ^1.1.1
       '@vue/compiler-sfc': ^3.2.45
@@ -197,7 +197,7 @@ importers:
       vue: ^3.2.45
     dependencies:
       '@babel/core': 7.20.2
-      '@vitejs/plugin-vue': 3.2.0_vite@3.2.4+vue@3.2.45
+      '@vitejs/plugin-vue': 4.0.0_vite@3.2.4+vue@3.2.45
       '@vitejs/plugin-vue-jsx': 2.1.1_vite@3.2.4+vue@3.2.45
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.20.2
       '@vue/compiler-sfc': 3.2.45
@@ -1588,8 +1588,20 @@ packages:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
+      vite: 3.2.4_@types+node@17.0.45
+      vue: 3.2.45
+    dev: true
+
+  /@vitejs/plugin-vue/4.0.0_vite@3.2.4+vue@3.2.45:
+    resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^4.0.0
+      vue: ^3.2.25
+    dependencies:
       vite: 3.2.4
       vue: 3.2.45
+    dev: false
 
   /@vitest/coverage-c8/0.25.2:
     resolution: {integrity: sha512-qKsiUJh3bjbB5Q229CbxEWCqiDBwvIrcZ9OOuQdMEC0pce3/LlTUK3+K3hd7WqAYEbbiqXfC5MVMKHZkV82PgA==}
