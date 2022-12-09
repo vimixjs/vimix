@@ -65,10 +65,10 @@
     "@types/minimatch": "^5.1.2",
     "@types/mustache": "^4.2.1",
     "@vimix/node": "workspace:*",
-    "vite": "^3.2.4"
+    "vite": "^4.0.0"
   },
   "peerDependencies": {
-    "vite": "^3.0.0"
+    "vite": "^4.0.0"
   },
   "engines": {
     "node": "^14.18.0 || >=16.0.0"
