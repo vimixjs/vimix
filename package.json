@@ -53,7 +53,7 @@
     "typescript": "^4.9.3",
     "vimix": "workspace:*",
     "vimix-scripts": "workspace:*",
-    "vite": "^3.2.4",
+    "vite": "^4.0.0",
     "vitepress": "^1.0.0-alpha.29",
     "vitest": "^0.25.2"
   },
