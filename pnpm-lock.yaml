@@ -218,7 +218,7 @@ importers:
 
   scripts:
     specifiers:
-      '@pnpm/lockfile-file': ^6.0.2
+      '@pnpm/lockfile-file': ^7.0.0
       '@pnpm/logger': ^5.0.0
       '@types/cross-spawn': ^6.0.2
       '@types/fs-extra': ^9.0.13
@@ -237,7 +237,7 @@ importers:
       yargs-parser: ^21.1.1
       zx: ^7.1.1
     dependencies:
-      '@pnpm/lockfile-file': 6.0.2_@pnpm+logger@5.0.0
+      '@pnpm/lockfile-file': 7.0.0_@pnpm+logger@5.0.0
       '@pnpm/logger': 5.0.0
       consola: 2.15.3
       cpy: 9.0.1
@@ -1253,9 +1253,9 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  /@pnpm/constants/6.1.0:
-    resolution: {integrity: sha512-L6AiU3OXv9kjKGTJN9j8n1TeJGDcLX9atQlZvAkthlvbXjvKc5SKNWESc/eXhr5nEfuMWhQhiKHDJCpYejmeCQ==}
-    engines: {node: '>=14.19'}
+  /@pnpm/constants/6.2.0:
+    resolution: {integrity: sha512-GlDVUkeTR2WK0oZAM+wtDY6RBMLw6b0Z/5qKgBbDszx4e+R7CHyfG7JofyypogRCfeWXeAXp2C2FkFTh+sNgIg==}
+    engines: {node: '>=14.6'}
     dev: false
 
   /@pnpm/crypto.base32-hash/1.0.1:
@@ -1265,11 +1265,21 @@ packages:
       rfc4648: 1.5.2
     dev: false
 
-  /@pnpm/error/4.0.0:
-    resolution: {integrity: sha512-NI4DFCMF6xb1SA0bZiiV5KrMCaJM2QmPJFC6p78FXujn7FpiRSWhT9r032wpuQumsl7DEmN4s3wl/P8TA+bL8w==}
+  /@pnpm/dependency-path/1.1.0:
+    resolution: {integrity: sha512-pLuG5zz3kjrTaWmQ79DxCSKhWAwhCjMRUa2A3vikDZKtzk+WAnvR5eLW6Op1SSAFNLwtqWRPaRpPXjHboWfGkw==}
     engines: {node: '>=14.6'}
     dependencies:
-      '@pnpm/constants': 6.1.0
+      '@pnpm/crypto.base32-hash': 1.0.1
+      '@pnpm/types': 8.10.0
+      encode-registry: 3.0.0
+      semver: 7.3.8
+    dev: false
+
+  /@pnpm/error/4.0.1:
+    resolution: {integrity: sha512-6UFakGqUDhnZVzYCfN+QaG1epxtBVS1M9mb9RzoBuvWxcimBYTT04fdYuyk1Nay8y/TvAVl3AVB/lCziWG0+2w==}
+    engines: {node: '>=14.6'}
+    dependencies:
+      '@pnpm/constants': 6.2.0
     dev: false
 
   /@pnpm/git-utils/0.1.0:
@@ -1279,37 +1289,37 @@ packages:
       execa: /safe-execa/0.1.2
     dev: false
 
-  /@pnpm/lockfile-file/6.0.2_@pnpm+logger@5.0.0:
-    resolution: {integrity: sha512-op3Lg7I2zrP53vp83FaK4IJUR3AerPwb2vFjQ6hbB1c8QoAguZ/A8JGswYXSL+TIvYkXAuCl9iWkSo17T4UXHg==}
+  /@pnpm/lockfile-file/7.0.0_@pnpm+logger@5.0.0:
+    resolution: {integrity: sha512-DTHZnWdnApk6noPyzQsFwlBI/sM0BVC34LWxs6CuRElIXKFfQtM488MuZ8I32fte7gBfljgP1oRVyPRNXR4a6w==}
     engines: {node: '>=14.6'}
     peerDependencies:
       '@pnpm/logger': ^5.0.0
     dependencies:
-      '@pnpm/constants': 6.1.0
-      '@pnpm/error': 4.0.0
+      '@pnpm/constants': 6.2.0
+      '@pnpm/dependency-path': 1.1.0
+      '@pnpm/error': 4.0.1
       '@pnpm/git-utils': 0.1.0
-      '@pnpm/lockfile-types': 4.3.5
+      '@pnpm/lockfile-types': 4.3.6
       '@pnpm/logger': 5.0.0
-      '@pnpm/merge-lockfile-changes': 4.0.2
-      '@pnpm/types': 8.9.0
+      '@pnpm/merge-lockfile-changes': 4.0.3
+      '@pnpm/types': 8.10.0
       '@pnpm/util.lex-comparator': 1.0.0
       '@zkochan/rimraf': 2.1.2
       comver-to-semver: 1.0.0
-      dependency-path: 9.2.8
       js-yaml: /@zkochan/js-yaml/0.0.6
       normalize-path: 3.0.0
       ramda: /@pnpm/ramda/0.28.1
       semver: 7.3.8
       sort-keys: 4.2.0
       strip-bom: 4.0.0
-      write-file-atomic: 4.0.2
+      write-file-atomic: 5.0.0
     dev: false
 
-  /@pnpm/lockfile-types/4.3.5:
-    resolution: {integrity: sha512-5GdnnhGdz+4JphrKYYZ7rcv9t37BllNwdCbFLYli6ajyIeoSCklNNCHWNewskWs3PZZUHW8LxD/nKHPaarbm9g==}
+  /@pnpm/lockfile-types/4.3.6:
+    resolution: {integrity: sha512-5vvdV3tEVOCzzeGv2FXK4590qPUVpZ+5gdqCawFuiNTJavx+4rmmY4aDUjdVXUcKGwqkIBPVKe/SNUBA3A2rtg==}
     engines: {node: '>=14.6'}
     dependencies:
-      '@pnpm/types': 8.9.0
+      '@pnpm/types': 8.10.0
     dev: false
 
   /@pnpm/logger/5.0.0:
@@ -1320,11 +1330,11 @@ packages:
       ndjson: 2.0.0
     dev: false
 
-  /@pnpm/merge-lockfile-changes/4.0.2:
-    resolution: {integrity: sha512-BD3w3XD2BCEXjL7UNcOzjAnTpMuI1hDzJ5MaMdSLBzbr6yfpjsyG+arNZvbECIcqh0YA4Ss0Jsks2yHwa/gCYw==}
+  /@pnpm/merge-lockfile-changes/4.0.3:
+    resolution: {integrity: sha512-njeoNDhWBW1Iylo8pCKNVYMdbEu5L3L7U99XCuBFuUiZYphmA/Ha3K1wxqrx6YHELZauAGkQOdwmU6iAeBsOjQ==}
     engines: {node: '>=14.6'}
     dependencies:
-      '@pnpm/lockfile-types': 4.3.5
+      '@pnpm/lockfile-types': 4.3.6
       comver-to-semver: 1.0.0
       ramda: /@pnpm/ramda/0.28.1
       semver: 7.3.8
@@ -1334,8 +1344,8 @@ packages:
     resolution: {integrity: sha512-zcAG+lvU0fMziNeGXpPyCyCJYp5ZVrPElEE4t14jAmViaihohocZ+dDkcRIyAomox8pQsuZnv1EyHR+pOhmUWw==}
     dev: false
 
-  /@pnpm/types/8.9.0:
-    resolution: {integrity: sha512-3MYHYm8epnciApn6w5Fzx6sepawmsNU7l6lvIq+ER22/DPSrr83YMhU/EQWnf4lORn2YyiXFj0FJSyJzEtIGmw==}
+  /@pnpm/types/8.10.0:
+    resolution: {integrity: sha512-A4pcNNvFJdkMXArEjTCOIYNL2VxD4uBynWZ6cBIELXb5qJ0tUzwKsaSz4J953I0rQFqnsFpUYqaWIquI10W1sw==}
     engines: {node: '>=14.6'}
     dev: false
 
@@ -2666,16 +2676,6 @@ packages:
       has-property-descriptors: 1.0.0
       object-keys: 1.1.1
     dev: true
-
-  /dependency-path/9.2.8:
-    resolution: {integrity: sha512-S0OhIK7sIyAsph8hVH/LMCTDL3jozKtlrPx3dMQrlE2nAlXTquTT+AcOufphDMTQqLkfn4acvfiem9I1IWZ4jQ==}
-    engines: {node: '>=14.6'}
-    dependencies:
-      '@pnpm/crypto.base32-hash': 1.0.1
-      '@pnpm/types': 8.9.0
-      encode-registry: 3.0.0
-      semver: 7.3.8
-    dev: false
 
   /detect-indent/6.1.0:
     resolution: {integrity: sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==}
@@ -6108,9 +6108,9 @@ packages:
   /wrappy/1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
-  /write-file-atomic/4.0.2:
-    resolution: {integrity: sha512-7KxauUdBmSdWnmpaGFg+ppNjKF8uNLry8LyzjauQDOVONfFLNKrKvQOxZ/VuTIcS/gge/YNahf5RIIQWTSarlg==}
-    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+  /write-file-atomic/5.0.0:
+    resolution: {integrity: sha512-R7NYMnHSlV42K54lwY9lvW6MnSm1HSJqZL3xiSgi9E7//FYaI74r2G0rd+/X6VAMkHEdzxQaU5HUOXWUz5kA/w==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       imurmurhash: 0.1.4
       signal-exit: 3.0.7
