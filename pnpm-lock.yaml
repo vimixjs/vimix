@@ -221,7 +221,7 @@ importers:
       '@pnpm/lockfile-file': ^6.0.2
       '@pnpm/logger': ^5.0.0
       '@types/cross-spawn': ^6.0.2
-      '@types/fs-extra': ^9.0.13
+      '@types/fs-extra': ^11.0.0
       '@types/lodash-es': ^4.17.6
       '@types/rimraf': ^3.0.2
       '@types/yargs-parser': ^21.0.0
@@ -252,7 +252,7 @@ importers:
       zx: 7.1.1
     devDependencies:
       '@types/cross-spawn': 6.0.2
-      '@types/fs-extra': 9.0.13
+      '@types/fs-extra': 11.0.0
       '@types/lodash-es': 4.17.6
       '@types/rimraf': 3.0.2
       '@types/yargs-parser': 21.0.0
@@ -1415,16 +1415,24 @@ packages:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: false
 
+  /@types/fs-extra/11.0.0:
+    resolution: {integrity: sha512-zdV5odfHf95B4qr6bdpshG4VMm/3xgnPhSJLa3xh75CYr35e34k+4FQli82Q48sPqwHazJGy+6+jl4T+Vw1AMg==}
+    dependencies:
+      '@types/jsonfile': 6.1.1
+      '@types/node': 18.11.9
+    dev: true
+
   /@types/fs-extra/9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
       '@types/node': 18.11.9
+    dev: false
 
   /@types/glob/7.2.0:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 17.0.45
+      '@types/node': 18.11.9
     dev: true
 
   /@types/glob/8.0.0:
@@ -1442,6 +1450,12 @@ packages:
 
   /@types/istanbul-lib-coverage/2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
+    dev: true
+
+  /@types/jsonfile/6.1.1:
+    resolution: {integrity: sha512-GSgiRCVeapDN+3pqA35IkQwasaCh/0YFH5dEF6S88iDvEn901DjOeH3/QPY+XYP1DFzDZPvIvfeEgk+7br5png==}
+    dependencies:
+      '@types/node': 18.11.9
     dev: true
 
   /@types/lodash-es/4.17.6:
