@@ -233,7 +233,7 @@ importers:
       git-repo-info: ^2.1.1
       lodash-es: ^4.17.21
       picocolors: ^1.0.0
-      rimraf: ^3.0.2
+      rimraf: ^4.0.0
       yargs-parser: ^21.1.1
       zx: ^7.1.1
     dependencies:
@@ -247,7 +247,7 @@ importers:
       git-repo-info: 2.1.1
       lodash-es: 4.17.21
       picocolors: 1.0.0
-      rimraf: 3.0.2
+      rimraf: 4.0.4
       yargs-parser: 21.1.1
       zx: 7.1.1
     devDependencies:
@@ -4980,6 +4980,12 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
+
+  /rimraf/4.0.4:
+    resolution: {integrity: sha512-R0hoVr9xTwemarQjoWlNt/nb5dEGVTBhVdkRmEX2zEkT8T6onH0XKiGjuaC7rNNj/gYzY2p4NVRJ3sjO1ascHQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: false
 
   /rollup/2.79.1:
     resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==}
