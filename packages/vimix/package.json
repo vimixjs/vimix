@@ -52,7 +52,7 @@
     "dotenv": "^16.0.3",
     "fast-glob": "^3.2.12",
     "lodash-es": "^4.17.21",
-    "minimatch": "^5.1.0",
+    "minimatch": "^6.0.0",
     "mustache": "^4.2.0",
     "ora": "^6.1.2",
     "picocolors": "^1.0.0",

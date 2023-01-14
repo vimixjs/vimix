@@ -156,7 +156,7 @@ importers:
       dotenv: ^16.0.3
       fast-glob: ^3.2.12
       lodash-es: ^4.17.21
-      minimatch: ^5.1.0
+      minimatch: ^6.0.0
       mustache: ^4.2.0
       ora: ^6.1.2
       picocolors: ^1.0.0
@@ -171,7 +171,7 @@ importers:
       dotenv: 16.0.3
       fast-glob: 3.2.12
       lodash-es: 4.17.21
-      minimatch: 5.1.0
+      minimatch: 6.0.0
       mustache: 4.2.0
       ora: 6.1.2
       picocolors: 1.0.0
@@ -4194,8 +4194,8 @@ packages:
     dependencies:
       brace-expansion: 1.1.11
 
-  /minimatch/5.1.0:
-    resolution: {integrity: sha512-9TPBGGak4nHfGZsPBohm9AWg6NoT7QTCehS3BIJABslyZbzxfV78QM2Y6+i741OPZIafFAaiiEMh5OyIrJPgtg==}
+  /minimatch/6.0.0:
+    resolution: {integrity: sha512-6c/YhQ/ZnMCtAGMJTuPQlk1Q6ig41qn1laC1H/AU6dIIgurKxxfh0OEALh9V4+vPcy2VC670D46TOGc8dirt6w==}
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.0.1
