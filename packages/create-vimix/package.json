@@ -34,7 +34,7 @@
     "dev": "pnpm build --watch"
   },
   "dependencies": {
-    "execa": "^6.1.0",
+    "execa": "^7.0.0",
     "fast-glob": "^3.2.12",
     "fs-extra": "^11.0.0",
     "gitignore-parser": "^0.0.2",
