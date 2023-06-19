@@ -6,7 +6,7 @@
     "vimix-scripts": "bin/vimix-scripts.js"
   },
   "dependencies": {
-    "@pnpm/lockfile-file": "^6.0.2",
+    "@pnpm/lockfile-file": "^8.0.0",
     "@pnpm/logger": "^5.0.0",
     "consola": "^2.15.3",
     "cpy": "^9.0.1",
