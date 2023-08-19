@@ -44,7 +44,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup PNPM
-        uses: pnpm/action-setup@v2.2.4
+        uses: pnpm/action-setup@v2.4.0
 
       - name: Setup node@${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -54,7 +54,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.4
+        uses: pnpm/action-setup@v2.4.0
         with:
           run_install: false
 
